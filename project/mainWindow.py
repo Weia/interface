@@ -1,0 +1,346 @@
+# -*- coding: utf-8 -*-
+
+# Form implementation generated from reading ui file 'mainWindow.ui'
+#
+# Created by: PyQt5 UI code generator 5.10.1
+#
+# WARNING! All changes made in this file will be lost!
+
+from PyQt5 import QtCore, QtGui, QtWidgets,Qt
+
+from myGraphicsView import MyGraphicsView
+
+class Ui_MainWindow(QtWidgets.QWidget):
+    def __init__(self):
+        super().__init__()
+
+
+    def setupUi(self, MainWindow):
+        MainWindow.setObjectName("MainWindow")
+        MainWindow.resize(QtWidgets.QApplication.desktop().width()-300,
+                          QtWidgets.QApplication.desktop().height()-100)
+        MainWindow.setWhatsThis("")
+        MainWindow.move((QtWidgets.QApplication.desktop().width()-MainWindow.width())/2,
+                        (QtWidgets.QApplication.desktop().height()-MainWindow.height())/4)
+        self.centralwidget = QtWidgets.QWidget(MainWindow)
+        self.centralwidget.setObjectName("centralwidget")
+        self.gridLayout = QtWidgets.QGridLayout(self.centralwidget)
+        self.gridLayout.setSpacing(12)
+        self.gridLayout.setObjectName("gridLayout")
+        self.verticalLayout_2 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_2.setObjectName("verticalLayout_2")
+        self.label_front = QtWidgets.QLabel(self.centralwidget)
+        font = QtGui.QFont()
+        font.setFamily("宋体")
+        font.setPointSize(16)
+        self.label_front.setFont(font)
+        self.label_front.setObjectName("label_front")
+        self.verticalLayout_2.addWidget(self.label_front)
+        #self.graphicsView_front = QtWidgets.QGraphicsView(self.centralwidget)
+        #将GraphicsView改写成自己的MyGraphicsViwe,拥有相应滚轮滑动的功能
+        self.graphicsView_front = MyGraphicsView()
+
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.graphicsView_front.sizePolicy().hasHeightForWidth())
+        self.graphicsView_front.setSizePolicy(sizePolicy)
+        self.graphicsView_front.setObjectName("graphicsView_front")
+        self.verticalLayout_2.addWidget(self.graphicsView_front)
+        self.gridLayout.addLayout(self.verticalLayout_2, 0, 0, 1, 1)
+        self.verticalLayout_3 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_3.setObjectName("verticalLayout_3")
+        self.label_side = QtWidgets.QLabel(self.centralwidget)
+        font = QtGui.QFont()
+        font.setFamily("宋体")
+        font.setPointSize(16)
+        self.label_side.setFont(font)
+        self.label_side.setObjectName("label_side")
+        self.verticalLayout_3.addWidget(self.label_side)
+        #self.graphicsView_side = QtWidgets.QGraphicsView(self.centralwidget)
+        #侧面视图改为MyGraphicsView
+        self.graphicsView_side = MyGraphicsView()
+
+        self.graphicsView_side.setObjectName("graphicsView_side")
+        self.verticalLayout_3.addWidget(self.graphicsView_side)
+        self.gridLayout.addLayout(self.verticalLayout_3, 0, 1, 1, 1)
+        self.verticalLayout = QtWidgets.QVBoxLayout()
+        self.verticalLayout.setObjectName("verticalLayout")
+        #设置边距（左，上，下，右）
+        self.verticalLayout.setContentsMargins(10,0,10,5)
+        self.label_input_height = QtWidgets.QLabel(self.centralwidget)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.label_input_height.sizePolicy().hasHeightForWidth())
+        self.label_input_height.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("宋体")
+        font.setPointSize(16)
+        self.label_input_height.setFont(font)
+        self.label_input_height.setObjectName("label_input_height")
+        self.verticalLayout.addWidget(self.label_input_height)
+        self.lineEdit_height = QtWidgets.QLineEdit(self.centralwidget)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.lineEdit_height.sizePolicy().hasHeightForWidth())
+        self.lineEdit_height.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("宋体")
+        font.setPointSize(18)
+        self.lineEdit_height.setFont(font)
+        self.lineEdit_height.setObjectName("lineEdit_height")
+        self.verticalLayout.addWidget(self.lineEdit_height)
+        self.label_tips = QtWidgets.QLabel(self.centralwidget)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.label_tips.sizePolicy().hasHeightForWidth())
+        self.label_tips.setSizePolicy(sizePolicy)
+        self.label_tips.setObjectName("label_tips")
+        self.verticalLayout.addWidget(self.label_tips)
+        self.label_neck = QtWidgets.QLabel(self.centralwidget)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.label_neck.sizePolicy().hasHeightForWidth())
+        self.label_neck.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("宋体")
+        font.setPointSize(16)
+        self.label_neck.setFont(font)
+        self.label_neck.setObjectName("label_neck")
+        self.verticalLayout.addWidget(self.label_neck)
+        self.lineEdit_neck = QtWidgets.QLineEdit(self.centralwidget)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.lineEdit_neck.sizePolicy().hasHeightForWidth())
+        self.lineEdit_neck.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("宋体")
+        font.setPointSize(18)
+        self.lineEdit_neck.setFont(font)
+        self.lineEdit_neck.setLayoutDirection(QtCore.Qt.LeftToRight)
+        self.lineEdit_neck.setReadOnly(True)
+        self.lineEdit_neck.setObjectName("lineEdit_neck")
+        self.verticalLayout.addWidget(self.lineEdit_neck)
+        self.label_sholder = QtWidgets.QLabel(self.centralwidget)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.label_sholder.sizePolicy().hasHeightForWidth())
+        self.label_sholder.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("宋体")
+        font.setPointSize(16)
+        self.label_sholder.setFont(font)
+        self.label_sholder.setObjectName("label_sholder")
+        self.verticalLayout.addWidget(self.label_sholder)
+        self.lineEdit_shoulder = QtWidgets.QLineEdit(self.centralwidget)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.lineEdit_shoulder.sizePolicy().hasHeightForWidth())
+        self.lineEdit_shoulder.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("宋体")
+        font.setPointSize(18)
+        self.lineEdit_shoulder.setFont(font)
+        self.lineEdit_shoulder.setReadOnly(True)
+        self.lineEdit_shoulder.setObjectName("lineEdit_shoulder")
+        self.verticalLayout.addWidget(self.lineEdit_shoulder)
+        self.label_chest = QtWidgets.QLabel(self.centralwidget)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.label_chest.sizePolicy().hasHeightForWidth())
+        self.label_chest.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("宋体")
+        font.setPointSize(16)
+        self.label_chest.setFont(font)
+        self.label_chest.setObjectName("label_chest")
+        self.verticalLayout.addWidget(self.label_chest)
+        self.lineEdit_chest = QtWidgets.QLineEdit(self.centralwidget)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.lineEdit_chest.sizePolicy().hasHeightForWidth())
+        self.lineEdit_chest.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("宋体")
+        font.setPointSize(18)
+        self.lineEdit_chest.setFont(font)
+        self.lineEdit_chest.setReadOnly(True)
+        self.lineEdit_chest.setObjectName("lineEdit_chest")
+        self.verticalLayout.addWidget(self.lineEdit_chest)
+        self.label_arm = QtWidgets.QLabel(self.centralwidget)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.label_arm.sizePolicy().hasHeightForWidth())
+        self.label_arm.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("宋体")
+        font.setPointSize(16)
+        self.label_arm.setFont(font)
+        self.label_arm.setObjectName("label_arm")
+        self.verticalLayout.addWidget(self.label_arm)
+        self.lineEdit_arm = QtWidgets.QLineEdit(self.centralwidget)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.lineEdit_arm.sizePolicy().hasHeightForWidth())
+        self.lineEdit_arm.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("宋体")
+        font.setPointSize(18)
+        self.lineEdit_arm.setFont(font)
+        self.lineEdit_arm.setReadOnly(True)
+        self.lineEdit_arm.setObjectName("lineEdit_arm")
+        self.verticalLayout.addWidget(self.lineEdit_arm)
+        self.gridLayout.addLayout(self.verticalLayout, 0, 2, 1, 1)
+        self.btn_predict = QtWidgets.QPushButton(self.centralwidget)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.btn_predict.sizePolicy().hasHeightForWidth())
+        self.btn_predict.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("宋体")
+        font.setPointSize(18)
+        self.btn_predict.setFont(font)
+        self.btn_predict.setObjectName("btn_predict")
+        self.gridLayout.addWidget(self.btn_predict, 1, 2, 1, 1)
+        self.horizontalLayout = QtWidgets.QHBoxLayout()
+        self.horizontalLayout.setSizeConstraint(QtWidgets.QLayout.SetFixedSize)
+        self.horizontalLayout.setSpacing(24)
+        self.horizontalLayout.setObjectName("horizontalLayout")
+        self.btn_openFile = QtWidgets.QPushButton(self.centralwidget)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.btn_openFile.sizePolicy().hasHeightForWidth())
+        self.btn_openFile.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("宋体")
+        font.setPointSize(18)
+        self.btn_openFile.setFont(font)
+        self.btn_openFile.setObjectName("btn_openFile")
+        self.horizontalLayout.addWidget(self.btn_openFile)
+        self.btn_uploadImage = QtWidgets.QPushButton(self.centralwidget)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.btn_uploadImage.sizePolicy().hasHeightForWidth())
+        self.btn_uploadImage.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("宋体")
+        font.setPointSize(18)
+        self.btn_uploadImage.setFont(font)
+        self.btn_uploadImage.setObjectName("btn_uploadImage")
+        self.horizontalLayout.addWidget(self.btn_uploadImage)
+        self.gridLayout.addLayout(self.horizontalLayout, 1, 1, 1, 1)
+        MainWindow.setCentralWidget(self.centralwidget)
+        self.menubar = QtWidgets.QMenuBar(MainWindow)
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 21))
+        self.menubar.setObjectName("menubar")
+        self.filemenu = QtWidgets.QMenu(self.menubar)
+        self.filemenu.setObjectName("filemenu")
+        MainWindow.setMenuBar(self.menubar)
+        self.statusbar = QtWidgets.QStatusBar(MainWindow)
+        self.statusbar.setObjectName("statusbar")
+        MainWindow.setStatusBar(self.statusbar)
+        self.actionopen = QtWidgets.QAction(MainWindow)
+        self.actionopen.setObjectName("actionopen")
+        self.filemenu.addAction(self.actionopen)
+        self.menubar.addAction(self.filemenu.menuAction())
+
+        self.retranslateUi(MainWindow)
+        QtCore.QMetaObject.connectSlotsByName(MainWindow)
+        #创建链接函数
+        self.creat_connect()
+        self.public_variable()
+        self.setGraphicsView(self.graphicsView_front)
+        self.setGraphicsView(self.graphicsView_side)
+
+    def retranslateUi(self, MainWindow):
+        _translate = QtCore.QCoreApplication.translate
+        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        self.label_front.setText(_translate("MainWindow", "正面图片："))
+        self.label_side.setText(_translate("MainWindow", "侧面图片："))
+        self.label_input_height.setText(_translate("MainWindow", "请输入身高："))
+        self.label_tips.setText(_translate("MainWindow", "提示：以厘米为单位的三位数"))
+        pe=QtGui.QPalette()
+        pe.setColor(QtGui.QPalette.WindowText,QtCore.Qt.red)
+        self.label_tips.setPalette(pe)
+        #self.label_tips.setVisible(False)
+        self.label_neck.setText(_translate("MainWindow", "颈围："))
+        self.label_sholder.setText(_translate("MainWindow", "肩宽："))
+        self.label_chest.setText(_translate("MainWindow", "胸围："))
+        self.label_arm.setText(_translate("MainWindow", "臂长："))
+        self.btn_predict.setText(_translate("MainWindow", "预测"))
+        self.btn_openFile.setText(_translate("MainWindow", "打开文件"))
+        self.btn_uploadImage.setText(_translate("MainWindow", "上传图片"))
+        self.filemenu.setTitle(_translate("MainWindow", "文件"))
+        self.actionopen.setText(_translate("MainWindow", "打开"))
+
+    #创建GraphView控件的控制信息
+    def setGraphicsView(self,the_graphics):
+        # the_graphics.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
+        # the_graphics.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
+        the_graphics.setCursor(QtCore.Qt.PointingHandCursor)#设置鼠标样式
+        the_graphics.setRenderHint(QtGui.QPainter.Antialiasing)#设置反走样
+
+    #创建控件与响应函数的链接
+    def creat_connect(self):
+        self.btn_openFile.clicked.connect(self.func_openFile)
+        self.btn_uploadImage.clicked.connect(self.func_uploadImage)
+        self.btn_predict.clicked.connect(self.func_predict)
+        self.filemenu.triggered.connect(self.func_openFile)
+    #需要传递的变量
+    def public_variable(self):
+        self.files=[]#打开文件的路径
+    #响应函数
+    #为GraphicsView设置场景
+    def _set_graphicsView_scene(self,graphics_view,file_name):
+        scene=QtWidgets.QGraphicsScene()
+        graphics_view.hasImage = True
+        # 适应窗口大小
+        fill_scene_picture=QtGui.QPixmap(file_name).scaled(self.graphicsView_front.width(),
+                                                           self.graphicsView_front.height(),
+                                                           QtCore.Qt.KeepAspectRatio,
+                                                           QtCore.Qt.SmoothTransformation)
+        scene.addItem(QtWidgets.QGraphicsPixmapItem(fill_scene_picture))
+        graphics_view.setScene(scene)
+        graphics_view.show()
+
+    def func_openFile(self):
+        #files=[]
+        try:
+            files,ok=QtWidgets.QFileDialog.getOpenFileNames(self,"选取文件",'./',"图像文件(*.jpeg *.png *.jpg)")
+            self.files=files
+            assert (files) ,'未选取文件'
+            num_files=len(self.files)
+        except Exception as info:
+            print(info)
+        else:
+            if num_files==2:
+                self._set_graphicsView_scene(self.graphicsView_front,files[0])
+                self._set_graphicsView_scene(self.graphicsView_side,files[1])
+            else:
+                print('please choose 2 pictures')
+
+
+    def func_uploadImage(self):
+
+        print('upload Image')
+
+    def func_predict(self):
+        print('predict')
+        pass
+
+
+
